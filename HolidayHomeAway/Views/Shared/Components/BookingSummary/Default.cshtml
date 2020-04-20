@@ -1,0 +1,13 @@
+﻿@model BookingViewModel
+
+@if (Model.Booking.BookingItems.Count > 0)
+{
+    <li>
+        <a>
+            <span class="fa fa-shopping-cart text-light"></span>
+            <span id="book-status" class="text-light">
+                @Model.Booking.BookingItems.Count
+            </span>
+        </a>
+    </li>
+}

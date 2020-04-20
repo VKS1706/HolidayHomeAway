@@ -1,0 +1,20 @@
+﻿@model IEnumerable<HolidayHomeAway.Models.Type>
+
+<li class="dropdown text-light">
+    <a asp-controller="Accom" asp-action="Index" 
+       class="dropdown-toggle text-light" data-toggle="dropdown">Holiday Lets<b class="fa-caret-square-down"></b>
+    </a>
+    <ul class="dropdown-menu text-light">
+        @foreach (var type in Model)
+        {
+            <li>
+                <a asp-controller="Accom" asp-action="List"
+                   asp-route-type="@type.Name">@type.Name</a>
+            </li>
+        }
+        <li class="divider-new"></li>
+        <li>
+            <a asp-controller="Accom" asp-action="List" asp-route-Type="">View All Holiday Lets</a>
+        </li>
+    </ul>
+</li>

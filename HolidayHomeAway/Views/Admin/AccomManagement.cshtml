@@ -1,0 +1,34 @@
+﻿@model AccomManagementViewModel
+<h1>Accom Management</h1>
+
+<table class="table table-condensed table-bordered">
+    <tr>
+        <th>Accom Id</th>
+        <th>Accom Name</th>
+        <th>Accom Ava</th>
+        <th>#Users12345</th>
+    </tr>
+    @foreach (var accom in Model.Accoms)
+    {
+        <tr>
+            <td>@accom.Id</td>
+            <td>@accom.Name</td>
+            
+            <td>
+                <form asp-action="DeleteAccom" asp-route-accomId="@accom.Id" method="post">
+                    <a class="btn btn-primary" asp-action="EditAccom" asp-route-accomId="@accom.Id">Edit</a>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this Holiday Let?')">
+                        Delete
+                    </button>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+
+<p>
+    <a class="btn btn-primary" asp-action="AddAccom">Add new Accom</a>
+</p>
+
+
+

@@ -1,0 +1,41 @@
+﻿@model BookingViewModel
+
+<h2>Your current bookings</h2>
+<h4>Here are the holiday lets that you currently have booked.</h4>
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>Selected Amount</th>
+        <th>Accoms</th>
+        <th class="text-right">Price</th>
+        <th class="text-right">Subtotal</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var line in Model.Booking.BookingItems)
+    {
+        <tr>
+            <td class="text-center">@line.Amount</td>
+            <td class="text-left">@line.Accom.Name</td>
+            <td class="text-right">@line.Accom.Price.ToString("c")</td>
+            <td class="text-right">
+                @(line.Amount*line.Accom.Price).ToString("c"))
+            </td>
+        </tr>
+    }
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="3" class="text-right">Total: </td>
+        <td class="text-right">
+            @Model.BookingTotal.ToString("c")
+        </td>
+    </tr>
+    </tfoot>
+</table>
+
+<div class="text-center">
+    <a class="btn btn-primary" asp-controller="Order" asp-action="Checkout">Checkout Now!</a>
+</div>
+
