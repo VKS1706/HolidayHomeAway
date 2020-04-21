@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HolidayHomeAway.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -64,9 +64,12 @@ namespace HolidayHomeAway.Controllers
         }
 
         [AllowAnonymous]
-        public IActionResult Register() //Runs this 
+        public IActionResult Register(string returnUrl) //Runs this 
         {
-            return View();
+            return View(new RegisterViewModel
+            {
+                ReturnUrl = returnUrl
+            });
         }
 
         [ValidateAntiForgeryToken]
@@ -75,7 +78,7 @@ namespace HolidayHomeAway.Controllers
         {
             if (ModelState.IsValid)
             {
-                var newUser = new ApplicationUser
+                var newUser = new ApplicationUser()
                 {
                     UserName = registerViewModel.UserName,
                     FirstName = registerViewModel.FirstName,
@@ -90,7 +93,7 @@ namespace HolidayHomeAway.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(newUser, false);
-                    return RedirectToAction("index", "Home");
+                    return RedirectToAction("Index", "Home");
                 }
                 
                 foreach (IdentityError error in result.Errors)
@@ -100,34 +103,6 @@ namespace HolidayHomeAway.Controllers
                
             }
             return View(registerViewModel);
-
-            //if (ModelState.IsValid)
-            //{
-            //    return View(registerViewModel);
-            //}
-
-            //var newUser = new ApplicationUser()
-            //{
-            //    UserName = registerViewModel.UserName,
-            //    FirstName = registerViewModel.FirstName,
-            //    LastName = registerViewModel.LastName,
-            //    Email = registerViewModel.Email,
-            //    City = registerViewModel.City,
-            //    Country = registerViewModel.Country
-            //};
-
-            //IdentityResult result = await _userManager.CreateAsync(newUser, registerViewModel.Password);
-
-            //if (result.Succeeded)
-            //{
-            //    return RedirectToAction("Index", "Home");
-            //}
-
-            //foreach (IdentityError identityError in result.Errors)
-            //{
-            //    ModelState.AddModelError("", identityError.Description);
-            //}
-            //return View(registerViewModel);
         }
 
         [HttpPost]
