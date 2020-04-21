@@ -19,7 +19,6 @@ namespace HolidayHomeAway.Models
 
         public DbSet<Accom> Accoms { get; set; }
         public DbSet<Type> Types { get; set; }
-        public DbSet<Availability> Availabilities { get; set; } //Check
         public DbSet<BookingItem> BookingItems { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetails> OrderDetails { get; set; }
@@ -34,13 +33,7 @@ namespace HolidayHomeAway.Models
             modelBuilder.Entity<Type>().HasData(new Type
             { Id = 2, Name = "Lodge", Description = "This is a lodge" });
 
-            //Seed Availability
-            modelBuilder.Entity<Availability>().HasData(new Availability
-            { Id = 1, Name = "High", Description = "There is high availability for this holiday let." });
-            modelBuilder.Entity<Availability>().HasData(new Availability
-            { Id = 2, Name = "Medium", Description = "There is some availability for this holiday let." });
-            modelBuilder.Entity<Availability>().HasData(new Availability
-            { Id = 3, Name = "Low", Description = "There is limited availability for this holiday let!" });
+            
 
 
             //Seed Accommodations 
@@ -53,7 +46,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 1,
-                AvailabilityId = 1,
+               AvailabilityType = AvailabilityType.High,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\AmblesideCara_Out.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -67,7 +60,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 1,
-                AvailabilityId = 2,
+                AvailabilityType = AvailabilityType.Low,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\ArronbrookCara.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -81,7 +74,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 1,
-                AvailabilityId = 1,
+               AvailabilityType = AvailabilityType.Medium,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\BiaritzCara.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -95,7 +88,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 1,
-                AvailabilityId = 3,
+                AvailabilityType = AvailabilityType.Low,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\BordeauxCara.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -109,7 +102,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 2,
-                AvailabilityId = 1,
+                AvailabilityType = AvailabilityType.High,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\CanterburyLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -123,7 +116,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 2,
-                AvailabilityId = 2,
+                AvailabilityType = AvailabilityType.Medium,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\ChedderWoodsLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -137,7 +130,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 2,
-                AvailabilityId = 3,
+                AvailabilityType = AvailabilityType.Medium,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\FarnhamLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -151,7 +144,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 2,
-                AvailabilityId = 1,
+                AvailabilityType = AvailabilityType.Low,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\HeroLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -165,7 +158,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 2,
-                AvailabilityId = 2,
+                AvailabilityType = AvailabilityType.Low,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\LakesLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -179,7 +172,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 1,
-                AvailabilityId = 1,
+                AvailabilityType = AvailabilityType.High,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\NewPinesCara.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -193,7 +186,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 2,
-                AvailabilityId = 3,
+                AvailabilityType = AvailabilityType.Low,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\ParksLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -207,7 +200,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 2,
-                AvailabilityId = 2,
+                AvailabilityType = AvailabilityType.High,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\PathFindersLodge_Out.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -221,7 +214,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 2,
-                AvailabilityId = 1,
+                AvailabilityType = AvailabilityType.Medium,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\ReacherLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -235,7 +228,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 2,
-                AvailabilityId = 3,
+                AvailabilityType = AvailabilityType.High,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\RetreatLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -249,7 +242,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 2,
-                AvailabilityId = 2,
+                AvailabilityType = AvailabilityType.Medium,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\WareehamRetreatLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -263,7 +256,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 2,
-                AvailabilityId = 1,
+                AvailabilityType = AvailabilityType.High,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\WellLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -277,7 +270,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 1,
-                AvailabilityId = 1,
+                AvailabilityType = AvailabilityType.Low,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\WimbledonCara.jpg",
                 Notes = "Extra Notes on this holiday let"
@@ -291,7 +284,7 @@ namespace HolidayHomeAway.Models
                 LongDescription =
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut accumsan neque sem, id faucibus lacus facilisis vel. Ut ac iaculis mi. Cras at tortor ullamcorper sem tincidunt dignissim ut finibus nisi. Nullam ut tellus in mauris maximus euismod eget faucibus est. Nullam at maximus augue, sit amet molestie tellus. Sed sodales ante neque, vel pellentesque nisl egestas rutrum. Ut quis tempor lorem, vitae cursus purus. Aenean urna orci, porta sed eleifend ac, fermentum a nisi. In faucibus nec arcu nec porta. Fusce pharetra commodo lacus, quis ullamcorper risus hendrerit congue.",
                 AccomTypeId = 2,
-                AvailabilityId = 3,
+                AvailabilityType = AvailabilityType.High,
                 ImageUrl =
                     "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\WoodsideBayLodge.jpg",
                 Notes = "Extra Notes on this holiday let"

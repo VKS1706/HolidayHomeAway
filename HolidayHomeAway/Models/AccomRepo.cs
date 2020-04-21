@@ -27,7 +27,7 @@ namespace HolidayHomeAway.Models
 
         public void UpdateAccom(Accom accom)
         {
-            var test = accom.AvailabilityId;
+            
             _appDbContext.Accoms.Update(accom);
             _appDbContext.SaveChanges();
         }

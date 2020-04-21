@@ -24,14 +24,6 @@ namespace HolidayHomeAway
             Configuration = configuration;
         }
 
-        //public Startup(IHostingEnvironment hostingEnvironment)
-        //{
-        //    _configurationRoot = new ConfigurationBuilder()
-        //        .SetBasePath(hostingEnvironment.ContentRootPath)
-        //        .AddJsonFile("appsettings.json")
-        //        .Build();
-        //}
-
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -52,15 +44,14 @@ namespace HolidayHomeAway
 
             services.AddScoped<IAccomRepo, AccomRepo>();
             services.AddScoped<ITypeRepo, TypeRepo>();
-            services.AddScoped<IAvailabilityRepo, AvailabilityRepo>();
+            
             services.AddScoped<IOrderRepo, OrderRepo>();
+
             services.AddScoped<Booking>(sp => Booking.GetBooking(sp));
 
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("AdministrationOnly", policy => policy.RequireRole("Administrator"));
-                //options.AddPolicy("DeleteAccom", policy => policy.RequireClaim("Delete Accom", "Delete Accom"));
-                //options.AddPolicy("AddAccom", policy => policy.RequireClaim("Add Accom", "Add Accom"));
             });
 
             services.AddHttpContextAccessor();

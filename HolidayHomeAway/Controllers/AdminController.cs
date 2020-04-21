@@ -24,16 +24,15 @@ namespace HolidayHomeAway.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IAccomRepo _accomRepo;
         private readonly ITypeRepo _typeRepo;
-        private readonly IAvailabilityRepo _availabilityRepo;
+        
 
         public AdminController(UserManager<ApplicationUser> userManager,
-            RoleManager<IdentityRole> roleManager, IAccomRepo accomRepo, ITypeRepo typeRepo, IAvailabilityRepo availabilityRepo)
+            RoleManager<IdentityRole> roleManager, IAccomRepo accomRepo, ITypeRepo typeRepo)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _accomRepo = accomRepo;
             _typeRepo = typeRepo;
-            _availabilityRepo = availabilityRepo;
         }
 
         public IActionResult Index()
@@ -65,6 +64,8 @@ namespace HolidayHomeAway.Controllers
             {
                 UserName = addUserViewModel.UserName,
                 Email = addUserViewModel.Email,
+                FirstName = addUserViewModel.FirstName,
+                LastName = addUserViewModel.LastName,
                 BirthDate = addUserViewModel.Birthdate,
                 City = addUserViewModel.City,
                 Country = addUserViewModel.Country
@@ -363,13 +364,13 @@ namespace HolidayHomeAway.Controllers
         {
             IEnumerable<Accom> accoms;
             string currentType = string.Empty;
-            string currentAva = string.Empty;
+            
 
             if (string.IsNullOrEmpty(type))
             {
                 accoms = _accomRepo.AllAccom.OrderBy(a => a.Id);
                 currentType = "All Accoms";
-                currentAva = "Ava";
+                
             }
             else
             {

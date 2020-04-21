@@ -13,7 +13,5 @@ namespace HolidayHomeAway.ViewModels
         public List<SelectListItem> Types { get; set; }
         public int TypeId { get; set; }
 
-        public List<SelectListItem>Availabilities { get; set; }
-        public int AvaId { get; set; }
     }
 }

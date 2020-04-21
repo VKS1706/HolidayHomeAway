@@ -24,7 +24,7 @@ namespace HolidayHomeAway.Controllers
         }
 
         [AllowAnonymous]
-        public IActionResult Login(string returnUrl)
+        public IActionResult Login(string returnUrl) //Runs this
         {
             return View(new LoginViewModel
             {
@@ -34,7 +34,7 @@ namespace HolidayHomeAway.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(LoginViewModel loginViewModel)
+        public async Task<IActionResult> Login(LoginViewModel loginViewModel) //Straight to this
         {
             if (!ModelState.IsValid)
             {
@@ -63,27 +63,71 @@ namespace HolidayHomeAway.Controllers
             return View(loginViewModel);
         }
 
-        public IActionResult Register()
+        [AllowAnonymous]
+        public IActionResult Register() //Runs this 
         {
             return View();
         }
 
-        [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(LoginViewModel loginViewModel)
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel registerViewModel) //Method that is Not running.
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser() { UserName = loginViewModel.UserName };
-                var result =
-                    await _userManager.CreateAsync(user, loginViewModel.Password);
+                var newUser = new ApplicationUser
+                {
+                    UserName = registerViewModel.UserName,
+                    FirstName = registerViewModel.FirstName,
+                    LastName = registerViewModel.LastName,
+                    Email = registerViewModel.Email,
+                    City = registerViewModel.City,
+                    Country = registerViewModel.Country
+                };
 
+                var result = await _userManager.CreateAsync(newUser, registerViewModel.Password);
+                
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    await _signInManager.SignInAsync(newUser, false);
+                    return RedirectToAction("index", "Home");
                 }
+                
+                foreach (IdentityError error in result.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+               
             }
-            return View(loginViewModel);
+            return View(registerViewModel);
+
+            //if (ModelState.IsValid)
+            //{
+            //    return View(registerViewModel);
+            //}
+
+            //var newUser = new ApplicationUser()
+            //{
+            //    UserName = registerViewModel.UserName,
+            //    FirstName = registerViewModel.FirstName,
+            //    LastName = registerViewModel.LastName,
+            //    Email = registerViewModel.Email,
+            //    City = registerViewModel.City,
+            //    Country = registerViewModel.Country
+            //};
+
+            //IdentityResult result = await _userManager.CreateAsync(newUser, registerViewModel.Password);
+
+            //if (result.Succeeded)
+            //{
+            //    return RedirectToAction("Index", "Home");
+            //}
+
+            //foreach (IdentityError identityError in result.Errors)
+            //{
+            //    ModelState.AddModelError("", identityError.Description);
+            //}
+            //return View(registerViewModel);
         }
 
         [HttpPost]

@@ -37,13 +37,9 @@
 
                         @await Component.InvokeAsync("BookingSummary")
 
-
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        @*<li class="nav-item">
-                                   <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                            </li>*@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
                         </li>
@@ -59,22 +55,26 @@
                             @await Component.InvokeAsync("AdminMenu")
                         }
 
-
-
                         @*<li class="nav-item">
                                 <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Book">Book Now!</a>
                             </li>*@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Gallery">Gallery</a>
                         </li>
-                        @*<li class="nav-item">
-                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="SignIn">SignIn</a>
-                            </li>*@
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Login">SignIn</a>
+                        </li>
+                       
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-controller="Accom" asp-action="List">List of Accom!</a>
                         </li>
                     </ul>
-                    @await Html.PartialAsync("LoginPartial")
+                    
+                   @*@await Html.PartialAsync("LoginPartial")*@
                 </div>
             </div>
         </nav>

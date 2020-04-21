@@ -12,13 +12,13 @@ namespace HolidayHomeAway.Controllers
     {
         private readonly IAccomRepo _accomRepo;
         private readonly ITypeRepo _typeRepo;
-        private readonly IAvailabilityRepo _availabilityRepo;
+        
 
-        public AccomController(IAccomRepo accomRepo, ITypeRepo typeRepo, IAvailabilityRepo availabilityRepo)
+        public AccomController(IAccomRepo accomRepo, ITypeRepo typeRepo)
         {
             _accomRepo = accomRepo;
             _typeRepo = typeRepo;
-            _availabilityRepo = availabilityRepo;
+            
         }
         public ViewResult List(string type)
         {

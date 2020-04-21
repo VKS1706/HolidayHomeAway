@@ -9,6 +9,8 @@ namespace HolidayHomeAway.Auth
 {
     public class ApplicationUser : IdentityUser //adding to properties already included in IdentityUser.
     {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public DateTime BirthDate { get; set; }
         public string City { get; set; }
         public string Country { get; set; }

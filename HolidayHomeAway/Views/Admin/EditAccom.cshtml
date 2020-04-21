@@ -56,10 +56,18 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="Accom.Availability" class="col-md-2 control-label"></label>
+        <label asp-for="Accom.AvailabilityType" class="col-md-2 control-label"></label>
         <div class="col-md-10">
-            <input asp-for="Accom.Availability" class="form-control" />
-            <span asp-validation-for="Accom.Availability" class="text-danger"></span>
+            <input asp-for="Accom.AvailabilityType" class="form-control" />
+            <span asp-validation-for="Accom.AvailabilityType" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Accom.Notes" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Accom.Notes" class="form-control" />
+            <span asp-validation-for="Accom.Notes" class="text-danger"></span>
         </div>
     </div>
 
@@ -77,4 +85,3 @@
         </div>
     </div>
 </form>
-
