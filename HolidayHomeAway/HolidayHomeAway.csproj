@@ -13,6 +13,10 @@
     <Compile Remove="Migrations\20200420082825_AuthAdded.Designer.cs" />
     <Compile Remove="Migrations\20200420134230_fullupdate.cs" />
     <Compile Remove="Migrations\20200420134230_fullupdate.Designer.cs" />
+    <Compile Remove="Migrations\20200422124837_OrderIdToString.cs" />
+    <Compile Remove="Migrations\20200422124837_OrderIdToString.Designer.cs" />
+    <Compile Remove="Migrations\20200422131221_DateTimeToDateInOrder.cs" />
+    <Compile Remove="Migrations\20200422131221_DateTimeToDateInOrder.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

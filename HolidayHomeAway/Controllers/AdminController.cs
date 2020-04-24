@@ -454,5 +454,11 @@ namespace HolidayHomeAway.Controllers
             return View();
         }
 
+        public IActionResult OrderManagement()
+        {
+            return View();
+        }
+
+
     }
 }

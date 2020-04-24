@@ -14,6 +14,9 @@ namespace HolidayHomeAway.Models
         public decimal Price { get; set; }
         public Accom Accom { get; set; }
         public Order Order { get; set; }
-        
+
+        public decimal OrderTotal { get; set; }
+
+
     }
 }

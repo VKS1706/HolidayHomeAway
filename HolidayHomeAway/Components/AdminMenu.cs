@@ -26,6 +26,11 @@ namespace HolidayHomeAway.Components
                 {
                     DisplayValue = "Accom Management",
                     ActionValue = "AccomManagement"
+                },
+                new AdminMenuItem()
+                {
+                    DisplayValue = "Order Management",
+                    ActionValue = "OrderManagement"
                 }
                 
             };

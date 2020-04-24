@@ -20,12 +20,14 @@ namespace HolidayHomeAway.Controllers
             _booking = booking;
         }
 
+        [Authorize]
         public IActionResult Checkout()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult Checkout(Order order)
         {
             var items = _booking.GetBookingItems();
@@ -48,7 +50,6 @@ namespace HolidayHomeAway.Controllers
 
         public IActionResult CheckoutComplete()
         {
-            ViewBag.CheckoutCompleteMessage = "Thanks for your order!";
             return View();
         }
     }

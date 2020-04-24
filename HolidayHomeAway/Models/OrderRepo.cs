@@ -32,10 +32,12 @@ namespace HolidayHomeAway.Models
                     Amount = bookingItem.Amount,
                     AccomId = bookingItem.Accom.Id,
                     OrderId = order.OrderId,
-                    Price = bookingItem.Accom.Price
+                    Price = bookingItem.Accom.Price,
+                    OrderTotal = order.OrderTotal = bookingItem.Accom.Price * order.NumberOfNights
                 };
 
-                _appDbContext.OrderDetails.Add(orderDetail);
+                _appDbContext.Orders.Add(order);
+                _appDbContext.SaveChanges();
             }
 
             _appDbContext.SaveChanges();

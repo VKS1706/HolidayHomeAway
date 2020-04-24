@@ -10,6 +10,7 @@ namespace HolidayHomeAway.Models
 {
     public class Order
     {
+        [BindNever]
         public int OrderId { get; set; }
         public List<OrderDetails> OrderDetails { get; set; }
 
@@ -59,6 +60,15 @@ namespace HolidayHomeAway.Models
             ErrorMessage = "The email address is not entered in a correct format")]
         public string Email { get; set; }
 
+        [Required]
+        [Display(Name = "How many nights would you like to stay for?")]
+        public int NumberOfNights { get; set; }
+
+        [Required]
+        [DataType(DataType.Date)]
+        [Display(Name = "Please indicate here What date you would like to arrive.")]
+        public DateTime RequestBookingDates { get; set; }
+
         [BindNever]
         [ScaffoldColumn(false)]
         public decimal OrderTotal { get; set; }
@@ -66,6 +76,5 @@ namespace HolidayHomeAway.Models
         [BindNever]
         [ScaffoldColumn(false)]
         public DateTime DateOrderPlaced { get; set; }
-
     }
 }

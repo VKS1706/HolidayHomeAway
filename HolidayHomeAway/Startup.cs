@@ -40,8 +40,7 @@ namespace HolidayHomeAway
                     options.User.RequireUniqueEmail = true;
                 })
                 .AddEntityFrameworkStores<AppDbContext>();
-
-
+            
             services.AddScoped<IAccomRepo, AccomRepo>();
             services.AddScoped<ITypeRepo, TypeRepo>();
             

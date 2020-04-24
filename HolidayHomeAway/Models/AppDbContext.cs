@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HolidayHomeAway.Models
 {
+    [System.Runtime.InteropServices.Guid("1BE7E62D-2C67-42C7-BA1E-E5E1864BAE2B")]
     public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options)
@@ -33,9 +34,6 @@ namespace HolidayHomeAway.Models
             modelBuilder.Entity<Type>().HasData(new Type
             { Id = 2, Name = "Lodge", Description = "This is a lodge" });
 
-            
-
-
             //Seed Accommodations 
             modelBuilder.Entity<Accom>().HasData(new Accom
             {
@@ -48,7 +46,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 1,
                AvailabilityType = AvailabilityType.High,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\AmblesideCara_Out.jpg",
+                    "Images\\AmblesideCara_Out.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -62,7 +60,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 1,
                 AvailabilityType = AvailabilityType.Low,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\ArronbrookCara.jpg",
+                    "Images\\ArronbrookCara.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -76,7 +74,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 1,
                AvailabilityType = AvailabilityType.Medium,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\BiaritzCara.jpg",
+                    "Images\\BiaritzCara.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -90,7 +88,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 1,
                 AvailabilityType = AvailabilityType.Low,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\BordeauxCara.jpg",
+                    "wwwroot\\Images\\BordeauxCara.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -104,7 +102,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 2,
                 AvailabilityType = AvailabilityType.High,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\CanterburyLodge.jpg",
+                    "wwwroot\\Images\\CanterburyLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -118,7 +116,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 2,
                 AvailabilityType = AvailabilityType.Medium,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\ChedderWoodsLodge.jpg",
+                    "\\wwwroot\\Images\\ChedderWoodsLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -132,7 +130,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 2,
                 AvailabilityType = AvailabilityType.Medium,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\FarnhamLodge.jpg",
+                    "\\wwwroot\\Images\\FarnhamLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -146,7 +144,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 2,
                 AvailabilityType = AvailabilityType.Low,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\HeroLodge.jpg",
+                    "wwwroot\\Images\\HeroLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -160,7 +158,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 2,
                 AvailabilityType = AvailabilityType.Low,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\LakesLodge.jpg",
+                    "wwwroot\\Images\\LakesLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -174,7 +172,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 1,
                 AvailabilityType = AvailabilityType.High,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\NewPinesCara.jpg",
+                    "wwwroot\\Images\\NewPinesCara.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -188,7 +186,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 2,
                 AvailabilityType = AvailabilityType.Low,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\ParksLodge.jpg",
+                    "wwwroot\\Images\\ParksLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -202,7 +200,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 2,
                 AvailabilityType = AvailabilityType.High,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\PathFindersLodge_Out.jpg",
+                    "wwwroot\\Images\\PathFindersLodge_Out.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -216,7 +214,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 2,
                 AvailabilityType = AvailabilityType.Medium,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\ReacherLodge.jpg",
+                    "wwwroot\\Images\\ReacherLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -230,7 +228,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 2,
                 AvailabilityType = AvailabilityType.High,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\RetreatLodge.jpg",
+                    "wwwroot\\Images\\RetreatLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -244,7 +242,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 2,
                 AvailabilityType = AvailabilityType.Medium,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\WareehamRetreatLodge.jpg",
+                    "wwwroot\\Images\\WareehamRetreatLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -258,7 +256,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 2,
                 AvailabilityType = AvailabilityType.High,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\WellLodge.jpg",
+                    "wwwroot\\Images\\WellLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -272,7 +270,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 1,
                 AvailabilityType = AvailabilityType.Low,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\WimbledonCara.jpg",
+                    "wwwroot\\Images\\WimbledonCara.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
@@ -286,7 +284,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 2,
                 AvailabilityType = AvailabilityType.High,
                 ImageUrl =
-                    "C:\\Users\\vikki\\source\\repos\\HolidayHomeAway\\HolidayHomeAway\\wwwroot\\Images\\WoodsideBayLodge.jpg",
+                    "wwwroot\\Images\\WoodsideBayLodge.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
 
