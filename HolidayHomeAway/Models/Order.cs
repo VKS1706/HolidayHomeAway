@@ -14,6 +14,7 @@ namespace HolidayHomeAway.Models
         public int OrderId { get; set; }
         public List<OrderDetails> OrderDetails { get; set; }
 
+        
         [Required]
         [Display(Name = "First Name")]
         [StringLength(50)]

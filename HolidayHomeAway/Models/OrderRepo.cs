@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace HolidayHomeAway.Models
 {
@@ -16,6 +17,10 @@ namespace HolidayHomeAway.Models
             _booking = booking;
         }
 
+        public IEnumerable<Order> AllOrders
+        {
+            get { return _appDbContext.Orders.ToList(); }
+        }
 
         public void CreateOrder(Order order)
         {

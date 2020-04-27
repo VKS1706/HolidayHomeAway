@@ -6,9 +6,10 @@ using HolidayHomeAway.Models;
 
 namespace HolidayHomeAway.ViewModels
 {
-    public class AccomManagementViewModel
+    public class OrderManagementViewModel
     {
-        public IEnumerable<Accom> Accoms{ get; set; }
+        public IEnumerable<Order> Orders { get; set; }
+
         public string CurrentType { get; set; }
     }
 }

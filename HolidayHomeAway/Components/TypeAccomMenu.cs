@@ -14,7 +14,6 @@ namespace HolidayHomeAway.Components
         public TypeAccomMenu(ITypeRepo typeRepo)
         {
             _typeRepo = typeRepo;
-
         }
 
         public IViewComponentResult Invoke()

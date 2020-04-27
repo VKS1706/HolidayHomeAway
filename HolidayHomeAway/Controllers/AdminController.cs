@@ -24,15 +24,17 @@ namespace HolidayHomeAway.Controllers
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IAccomRepo _accomRepo;
         private readonly ITypeRepo _typeRepo;
+        private readonly IOrderRepo _orderRepo;
         
 
         public AdminController(UserManager<ApplicationUser> userManager,
-            RoleManager<IdentityRole> roleManager, IAccomRepo accomRepo, ITypeRepo typeRepo)
+            RoleManager<IdentityRole> roleManager, IAccomRepo accomRepo, ITypeRepo typeRepo, IOrderRepo orderRepo)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _accomRepo = accomRepo;
             _typeRepo = typeRepo;
+            _orderRepo = orderRepo;
         }
 
         public IActionResult Index()
@@ -454,11 +456,21 @@ namespace HolidayHomeAway.Controllers
             return View();
         }
 
-        public IActionResult OrderManagement()
+        public IActionResult OrderManagement(string type)
         {
-            return View();
+            IEnumerable<Order> orders = null;
+            string currentType = string.Empty;
+
+            if (string.IsNullOrEmpty(type))
+            {
+                orders = _orderRepo.AllOrders.OrderBy(o => o.OrderId);
+                currentType = "All Orders";
+            }
+            return View(new OrderManagementViewModel()
+            {
+                Orders = orders,
+                CurrentType = currentType
+            });
         }
-
-
     }
 }
