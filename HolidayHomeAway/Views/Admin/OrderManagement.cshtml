@@ -4,14 +4,13 @@
 
 <table class="table table-condensed table-bordered">
     <tr>
-        <th>Order ID</th>
+        <th>Order Id</th>
         <th>Order Last Name</th>
         <th>Order Start Date</th>
         <th>Order Placed</th>
     </tr>
-
-
-    @foreach (var order in Model.Orders)
+    
+    @foreach(var order in Model.Orders)
     {
         <tr>
             <td>@order.OrderId</td>

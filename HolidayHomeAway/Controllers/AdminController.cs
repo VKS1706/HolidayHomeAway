@@ -472,5 +472,7 @@ namespace HolidayHomeAway.Controllers
                 CurrentType = currentType
             });
         }
+
+
     }
 }

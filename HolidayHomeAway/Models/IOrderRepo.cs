@@ -7,8 +7,8 @@ namespace HolidayHomeAway.Models
 {
    public interface IOrderRepo
    {
-        IEnumerable<Order> AllOrders { get; }
-
+       IEnumerable<Order> AllOrders { get; }
+        
        void CreateOrder(Order order);
    }
 }
