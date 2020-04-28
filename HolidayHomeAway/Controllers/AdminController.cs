@@ -456,22 +456,22 @@ namespace HolidayHomeAway.Controllers
             return View();
         }
 
-        //public IActionResult OrderManagement(string type)
-        //{
-        //    IEnumerable<Order> orders = null;
-        //    string currentType = string.Empty;
+        public IActionResult OrderManagement(string type)
+        {
+            IEnumerable<Order> orders = null;
+            string currentType = string.Empty;
 
-        //    if (string.IsNullOrEmpty(type))
-        //    {
-        //        orders = _orderRepo.AllOrders.OrderBy(o => o.OrderId);
-        //        currentType = "All Orders";
-        //    }
-        //    return View(new OrderManagementViewModel()
-        //    {
-        //        Orders = orders,
-        //        CurrentType = currentType
-        //    });
-        //}
+            if (string.IsNullOrEmpty(type))
+            {
+                orders = _orderRepo.AllOrders.OrderBy(o => o.OrderId);
+                currentType = "All Orders";
+            }
+            return View(new OrderManagementViewModel()
+            {
+                Orders = orders,
+                CurrentType = currentType
+            });
+        }
 
 
     }

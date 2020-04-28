@@ -16,6 +16,10 @@ namespace HolidayHomeAway.Models
             _booking = booking;
         }
 
+        public IEnumerable<Order> AllOrders
+        {
+            get { return _appDbContext.Orders.ToList(); }
+        }
 
         public void CreateOrder(Order order)
         {
