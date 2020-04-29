@@ -46,7 +46,7 @@ namespace HolidayHomeAway.Models
                 AccomTypeId = 1,
                AvailabilityType = AvailabilityType.High,
                 ImageUrl =
-                    "Images\\AmblesideCara_Out.jpg",
+                    "~Images\\AmblesideCara_Out.jpg",
                 Notes = "Extra Notes on this holiday let"
             });
             modelBuilder.Entity<Accom>().HasData(new Accom
