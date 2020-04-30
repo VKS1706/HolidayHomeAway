@@ -1,6 +1,7 @@
 ﻿@model AccomListViewModel
 
 <h1>@Model.CurrentType</h1>
+
 @foreach (var accom in Model.Accoms)
 {
     <partial name="_AccomCard" model="accom" />
