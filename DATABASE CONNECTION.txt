@@ -1,0 +1,12 @@
+Deets for accessing your database
+
+goto: https://mssql-eu.site4now.net/default.asp
+
+sql server ip: SQL6009.site4now.net
+
+database name: DB_A54212_VikkiDatabase
+user name: DB_A54212_VikkiDatabase
+
+password: BAE12345
+
+Port: 1433
